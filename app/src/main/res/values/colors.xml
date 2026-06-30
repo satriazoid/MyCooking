@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cafe_primary">#DDB892</color>
+    <color name="cafe_secondary">#7F5539</color>
+    <color name="cafe_background">#FFF1E6</color>
+    <color name="cafe_surface">#FFFFFF</color>
+    <color name="cafe_error">#E63946</color>
+    <color name="cafe_on_primary">#FFFFFF</color>
+    <color name="cafe_text_dark">#3E2723</color>
+    <color name="cafe_text_light">#8D6E63</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="purple_200">#7F5539</color>
+    <color name="purple_500">#7F5539</color>
+    <color name="purple_700">#3E2723</color>
+    <color name="teal_200">#DDB892</color>
+    <color name="teal_700">#7F5539</color>
+</resources>

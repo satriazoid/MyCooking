@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyCooking" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/cafe_primary</item>
+        <item name="colorPrimaryVariant">@color/cafe_secondary</item>
+        <item name="colorOnPrimary">@color/cafe_on_primary</item>
+
+        <item name="colorSecondary">@color/cafe_secondary</item>
+        <item name="colorSecondaryVariant">@color/cafe_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:colorBackground">@color/cafe_background</item>
+        <item name="colorSurface">@color/cafe_surface</item>
+        <item name="colorError">@color/cafe_error</item>
+
+        <item name="boxStrokeColor">@color/cafe_secondary</item>
+        <item name="android:textColorPrimary">@color/cafe_text_dark</item>
+
+        <item name="colorControlActivated">@color/cafe_secondary</item>
+        <item name="colorControlHighlight">@color/cafe_secondary</item>
+    </style>
+
+</resources>

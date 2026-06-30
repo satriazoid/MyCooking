@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Lingkaran latar icon -->
+    <path
+        android:fillColor="#DDB892"
+        android:pathData="M54,54m-50,0a50,50 0,1 1,100 0a50,50 0,1 1,-100 0" />
+
+    <!-- Emoji panci / mangkok sederhana sebagai ikon MyCooking -->
+    <path
+        android:fillColor="#7F5539"
+        android:pathData="M30,60 Q30,74 54,74 Q78,74 78,60 L78,56 L30,56 Z" />
+    <path
+        android:fillColor="#7F5539"
+        android:pathData="M22,56 L30,56 L30,62 L22,62 Z"
+        android:strokeColor="#7F5539"
+        android:strokeWidth="1" />
+    <path
+        android:fillColor="#7F5539"
+        android:pathData="M78,56 L86,56 L86,62 L78,62 Z" />
+    <!-- Uap / asap -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M44,48 Q42,42 44,36 Q46,30 44,24"
+        android:strokeColor="#7F5539"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,48 Q52,42 54,36 Q56,30 54,24"
+        android:strokeColor="#7F5539"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M64,48 Q62,42 64,36 Q66,30 64,24"
+        android:strokeColor="#7F5539"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+</vector>

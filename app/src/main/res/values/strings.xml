@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyCooking</string>
+
+    <!-- Login -->
+    <string name="hint_nim">NIM Mahasiswa</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Masuk</string>
+
+    <!-- Main -->
+    <string name="main_toolbar_title">MyCooking 🍳</string>
+    <string name="empty_state">Belum ada resep.\nKetuk tombol + untuk menambahkan!</string>
+
+    <!-- Form -->
+    <string name="label_nama">Nama Menu</string>
+    <string name="label_kategori">Kategori</string>
+    <string name="label_bahan">Bahan-Bahan</string>
+    <string name="label_harga">Estimasi Harga (Rp)</string>
+    <string name="label_rating">Rating Resep</string>
+    <string name="btn_pilih_foto">🖼 Pilih Foto Menu</string>
+    <string name="btn_simpan">Simpan Resep</string>
+    <string name="btn_update">Perbarui Resep</string>
+
+    <!-- Detail -->
+    <string name="detail_kategori">Kategori</string>
+    <string name="detail_bahan">Bahan-Bahan</string>
+    <string name="detail_harga">Estimasi Harga</string>
+
+    <!-- Kategori menu (Spinner) -->
+    <string-array name="kategori_menu">
+        <item>Makanan Utama</item>
+        <item>Minuman</item>
+        <item>Dessert</item>
+        <item>Snack</item>
+        <item>Sarapan</item>
+    </string-array>
+</resources>

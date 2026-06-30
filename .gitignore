@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Android Studio
+.idea/
+*.iml
+
+# Local SDK
+local.properties
+
+# Native Build
+.externalNativeBuild/
+.cxx/
+
+# Kotlin
+.kotlin/
+
+# Log
+*.log
+
+# Signing
+*.jks
+*.keystore
+keystore.properties
+signing.properties
