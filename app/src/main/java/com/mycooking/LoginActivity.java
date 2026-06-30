@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         String inputNIM  = editNIM.getText().toString().trim();
         String inputPass = editPassword.getText().toString().trim();
 
-        // Reset error sebelumnya
         layoutNIM.setError(null);
         layoutPassword.setError(null);
 

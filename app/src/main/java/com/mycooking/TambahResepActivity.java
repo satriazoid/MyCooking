@@ -16,10 +16,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-/**
- * TambahResepActivity — Form penambahan resep baru.
- * Validasi inline (TextInputLayout.setError) + try-catch NumberFormatException.
- */
+
 public class TambahResepActivity extends AppCompatActivity {
 
     private TextInputLayout   layoutNama, layoutBahan, layoutHarga;
@@ -29,6 +26,7 @@ public class TambahResepActivity extends AppCompatActivity {
     private MaterialButton    btnPilihFoto, btnSimpan;
     private String            fotoUriString = "";
     private DatabaseHelper    dbHelper;
+    private boolean           isSaving = false; // Flag untuk mencegah double insert
 
     private final ActivityResultLauncher<Intent> galleryLauncher =
         registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
@@ -74,7 +72,6 @@ public class TambahResepActivity extends AppCompatActivity {
         btnSimpan     = findViewById(R.id.btnSimpan);
 
         // Setup Spinner kategori dengan custom layout agar teks berwarna hitam/gelap
-        // Baik untuk tampilan tertutup (R.layout.spinner_item) maupun dropdown (R.layout.spinner_dropdown_item)
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.kategori_menu, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
@@ -93,6 +90,8 @@ public class TambahResepActivity extends AppCompatActivity {
     }
 
     private void simpanData() {
+        if (isSaving) return; // Jika sedang proses simpan, abaikan klik berikutnya
+
         String nama     = editNama.getText().toString().trim();
         String bahan    = editBahan.getText().toString().trim();
         String kategori = spinnerKategori.getSelectedItem().toString();
@@ -118,6 +117,10 @@ public class TambahResepActivity extends AppCompatActivity {
             return;
         }
 
+        // Set flag menjadi true dan disable tombol agar tidak bisa diklik dua kali
+        isSaving = true;
+        btnSimpan.setEnabled(false);
+
         long hasil = dbHelper.insertData(nama, kategori, bahan,
                                          harga, fotoUriString, rating);
         if (hasil != -1) {
@@ -127,6 +130,9 @@ public class TambahResepActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Gagal menyimpan resep.",
                            Toast.LENGTH_SHORT).show();
+            // Reset flag jika gagal agar user bisa mencoba lagi
+            isSaving = false;
+            btnSimpan.setEnabled(true);
         }
     }
 

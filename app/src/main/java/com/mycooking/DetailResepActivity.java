@@ -9,10 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 
-/**
- * DetailResepActivity — Tampilkan detail lengkap satu resep.
- * Gambar di-load async dengan Glide (anti-lag & anti-OOM).
- */
 public class DetailResepActivity extends AppCompatActivity {
 
     public static final String EXTRA_ID = "extra_id";
@@ -22,7 +18,6 @@ public class DetailResepActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_resep);
 
-        // Tombol back di toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -36,7 +31,6 @@ public class DetailResepActivity extends AppCompatActivity {
         ResepModel     resep    = dbHelper.getResepById(resepId);
         if (resep == null)  { finish(); return; }
 
-        // Bind data ke view
         if (getSupportActionBar() != null)
             getSupportActionBar().setTitle(resep.getNamaMenu());
 

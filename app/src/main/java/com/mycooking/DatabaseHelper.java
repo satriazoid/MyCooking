@@ -9,18 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DatabaseHelper — mengelola koneksi SQLite untuk MyCooking.
- * Nama DB  : MyCooking_231011400324.db
- * Nama Tabel: tabel_resep_231011400324
- */
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME    = "MyCooking_231011400324.db";
     private static final int    DB_VERSION = 1;
     private static final String TBL        = "tabel_resep_231011400324";
 
-    // Nama kolom
     public static final String COL_ID       = "id_resep";
     public static final String COL_NIM      = "nim_verifikasi";
     public static final String COL_NAMA     = "nama_menu";
@@ -57,7 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // ===================== CREATE =====================
     public long insertData(String nama, String kategori, String bahan,
                            int harga, String fotoUri, float rating) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -73,7 +67,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    // ===================== READ ALL =====================
     public List<ResepModel> getAllResep() {
         List<ResepModel> list = new ArrayList<>();
         SQLiteDatabase   db   = this.getReadableDatabase();
@@ -88,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return list;
     }
 
-    // ===================== READ BY ID =====================
     public ResepModel getResepById(int id) {
         SQLiteDatabase db     = this.getReadableDatabase();
         Cursor         cursor = db.rawQuery(
@@ -101,7 +93,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return model;
     }
 
-    // ===================== UPDATE =====================
     public int updateData(int id, String nama, String kategori, String bahan,
                           int harga, String fotoUri, float rating) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -117,14 +108,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return rows;
     }
 
-    // ===================== DELETE =====================
     public void deleteData(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TBL, COL_ID + "=?", new String[]{ String.valueOf(id) });
         db.close();
     }
 
-    // ===================== HELPER =====================
     private ResepModel cursorToModel(Cursor c) {
         return new ResepModel(
             c.getInt   (c.getColumnIndexOrThrow(COL_ID)),

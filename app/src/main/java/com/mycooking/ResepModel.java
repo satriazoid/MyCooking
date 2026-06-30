@@ -1,9 +1,6 @@
 package com.mycooking;
 
-/**
- * Model / POJO untuk satu baris data resep di SQLite.
- * Digunakan oleh DatabaseHelper dan ResepAdapter.
- */
+
 public class ResepModel {
 
     private int    idResep;

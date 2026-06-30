@@ -15,11 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.List;
 
-/**
- * ResepAdapter — Adapter RecyclerView untuk daftar resep MyCooking.
- * Setiap item memiliki tombol Edit dan Hapus.
- * Gambar di-load async dengan Glide.
- */
+
 public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ViewHolder> {
 
     private final Context          ctx;
