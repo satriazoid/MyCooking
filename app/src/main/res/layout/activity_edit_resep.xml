@@ -23,26 +23,31 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <!-- Nama Menu -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutNama"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/label_nama"
+                app:hintTextColor="@color/cafe_text_dark"
                 app:boxStrokeColor="@color/cafe_secondary">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editNama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
+                    android:inputType="textCapWords"
+                    android:textColor="@color/cafe_text_dark"
+                    android:textColorHint="@color/cafe_text_light" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Kategori -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_kategori"
                 android:textSize="12sp"
-                android:textColor="@color/cafe_text_light"
+                android:textColor="@color/cafe_text_dark"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="4dp" />
 
@@ -52,6 +57,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/spinner_bg" />
 
+            <!-- Bahan -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutBahan"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -59,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/label_bahan"
+                app:hintTextColor="@color/cafe_text_dark"
                 app:boxStrokeColor="@color/cafe_secondary">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editBahan"
@@ -66,9 +73,12 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:minLines="3"
-                    android:gravity="top" />
+                    android:gravity="top"
+                    android:textColor="@color/cafe_text_dark"
+                    android:textColorHint="@color/cafe_text_light" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Harga -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutHarga"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -77,20 +87,25 @@
                 android:layout_marginTop="16dp"
                 android:hint="@string/label_harga"
                 app:prefixText="Rp "
+                app:prefixTextColor="@color/cafe_text_dark"
+                app:hintTextColor="@color/cafe_text_dark"
                 app:boxStrokeColor="@color/cafe_secondary">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editHarga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="@color/cafe_text_dark"
+                    android:textColorHint="@color/cafe_text_light" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Rating -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_rating"
                 android:textSize="12sp"
-                android:textColor="@color/cafe_text_light"
+                android:textColor="@color/cafe_text_dark"
                 android:layout_marginTop="16dp" />
 
             <RatingBar
@@ -98,8 +113,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
-                android:stepSize="0.5" />
+                android:stepSize="0.5"
+                android:progressTint="@color/cafe_secondary" />
 
+            <!-- Pilih Foto -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPilihFoto"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -107,9 +124,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/btn_pilih_foto"
+                android:textColor="@color/cafe_secondary"
                 app:strokeColor="@color/cafe_secondary"
                 app:cornerRadius="12dp" />
 
+            <!-- Update -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
@@ -117,6 +136,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/btn_update"
+                android:textColor="@color/white"
                 android:paddingTop="14dp"
                 android:paddingBottom="14dp"
                 app:backgroundTint="@color/cafe_secondary"

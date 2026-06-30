@@ -16,10 +16,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-/**
- * EditResepActivity — Form edit resep yang sudah ada.
- * Data lama di-load otomatis dari SQLite berdasarkan id yang dikirim via Intent.
- */
+
 public class EditResepActivity extends AppCompatActivity {
 
     public static final String EXTRA_ID = "extra_id";
@@ -72,16 +69,16 @@ public class EditResepActivity extends AppCompatActivity {
         btnPilihFoto    = findViewById(R.id.btnPilihFoto);
         btnUpdate       = findViewById(R.id.btnUpdate);
 
-        // Setup Spinner
+        // Setup Spinner dengan custom layout agar teks berwarna gelap
+        // Menggunakan R.layout.spinner_item dan R.layout.spinner_dropdown_item
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-            this, R.array.kategori_menu, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            this, R.array.kategori_menu, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerKategori.setAdapter(adapter);
 
         resepId = getIntent().getIntExtra(EXTRA_ID, -1);
         if (resepId == -1) { finish(); return; }
 
-        // Isi field dengan data lama
         isiDataLama();
 
         btnPilihFoto.setOnClickListener(v -> bukaGallery());
@@ -99,7 +96,6 @@ public class EditResepActivity extends AppCompatActivity {
         fotoUriString = data.getFotoUriPath();
         if (!fotoUriString.isEmpty()) btnPilihFoto.setText("🖼️  Foto Dipilih ✓");
 
-        // Set spinner ke kategori tersimpan
         String[] cats = getResources().getStringArray(R.array.kategori_menu);
         for (int i = 0; i < cats.length; i++) {
             if (cats[i].equals(data.getKategoriMenu())) {

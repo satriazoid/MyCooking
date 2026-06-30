@@ -53,8 +53,6 @@ public class TambahResepActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-
-            // 1. PAKSA WARNA TEKS JUDUL MENJADI COKELAT TUA DI JAVA
             toolbar.setTitleTextColor(getResources().getColor(R.color.cafe_text_dark));
         }
 
@@ -62,7 +60,6 @@ public class TambahResepActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Tambah Resep");
         }
-        // ----------------------------------------
 
         dbHelper      = new DatabaseHelper(this);
         layoutNama    = findViewById(R.id.layoutNama);
@@ -76,10 +73,11 @@ public class TambahResepActivity extends AppCompatActivity {
         btnPilihFoto  = findViewById(R.id.btnPilihFoto);
         btnSimpan     = findViewById(R.id.btnSimpan);
 
-        // Setup Spinner kategori
+        // Setup Spinner kategori dengan custom layout agar teks berwarna hitam/gelap
+        // Baik untuk tampilan tertutup (R.layout.spinner_item) maupun dropdown (R.layout.spinner_dropdown_item)
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.kategori_menu, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                this, R.array.kategori_menu, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerKategori.setAdapter(adapter);
 
         btnPilihFoto.setOnClickListener(v -> bukaGallery());
@@ -100,12 +98,10 @@ public class TambahResepActivity extends AppCompatActivity {
         String kategori = spinnerKategori.getSelectedItem().toString();
         float  rating   = ratingBar.getRating();
 
-        // Reset error
         layoutNama.setError(null);
         layoutBahan.setError(null);
         layoutHarga.setError(null);
 
-        // Validasi wajib isi
         if (nama.isEmpty())  { layoutNama.setError("Nama menu wajib diisi!");            return; }
         if (bahan.isEmpty()) { layoutBahan.setError("Bahan-bahan tidak boleh kosong!");  return; }
         if (fotoUriString.isEmpty()) {
@@ -114,7 +110,6 @@ public class TambahResepActivity extends AppCompatActivity {
             return;
         }
 
-        // Validasi angka — anti NumberFormatException crash
         int harga;
         try {
             harga = Integer.parseInt(editHarga.getText().toString().trim());
