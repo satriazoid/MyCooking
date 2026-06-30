@@ -2,7 +2,7 @@
 
 **MyCooking** adalah aplikasi manajemen resep masakan berbasis Android yang dikembangkan menggunakan Java dan SQLite. Aplikasi ini memungkinkan pengguna untuk mencatat, melihat, mengedit, dan menghapus resep masakan favorit mereka.
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
 - **Autentikasi**: Fitur Login sederhana untuk mengamankan akses ke aplikasi.
 - **Manajemen Resep (CRUD)**:
@@ -20,7 +20,7 @@
 - **UI Framework**: Android XML
 - **Minimum SDK**: Android 24 (atau sesuai konfigurasi project)
 
-## 📁 Struktur Database
+## Struktur Database
 
 Aplikasi ini menggunakan database SQLite dengan detail sebagai berikut:
 - **Nama Database**: _# Rahasia_
@@ -38,7 +38,7 @@ Aplikasi ini menggunakan database SQLite dengan detail sebagai berikut:
 | `foto_uri_path` | TEXT | Path/URI foto masakan |
 | `skor_rating` | REAL | Rating masakan (0.0 - 5.0) |
 
-## ⚙️ Cara Menjalankan
+## Cara Menjalankan
 
 1. Clone repository ini.
 2. Buka project di **Android Studio**.
@@ -46,7 +46,7 @@ Aplikasi ini menggunakan database SQLite dengan detail sebagai berikut:
 4. Hubungkan perangkat Android atau jalankan Emulator.
 5. Klik tombol **Run 'app'**.
 
-## 👤 Author
+## Author
 
 - **Nama**: Satria Alfarizki
 - **NIM**: *****
