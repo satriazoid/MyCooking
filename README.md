@@ -13,7 +13,7 @@
   - **Hapus Resep**: Menghapus resep dari koleksi.
 - **Penyimpanan Lokal**: Menggunakan database SQLite untuk menyimpan data secara permanen di perangkat.
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - **Bahasa Pemrograman**: Java
 - **Database**: SQLite
